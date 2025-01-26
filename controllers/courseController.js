@@ -20,12 +20,12 @@ export const addCourse = async (req, res) => {
       {
         replacements: {
           mode: "insert",
-          courseid: courseid,
-          coursename: coursename,
-          description: description,
-          startdate: startdate,
-          enddate: enddate,
-          teacher: teacher,
+          courseid: courseid || null,
+          coursename: coursename || null,
+          description: description || null,
+          startdate: startdate || null,
+          enddate: enddate || null,
+          teacher: teacher || null,
         },
       }
     );
