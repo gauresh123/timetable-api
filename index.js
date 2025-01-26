@@ -38,7 +38,7 @@ cron.schedule("* * * * * *", () => {
   console.log("Cron job running every 1 minutes");
 
   axios
-    .get("https://chat-app-api-cm2u.onrender.com/")
+    .get("https://timetable-api-ls83.onrender.com/")
     .then((response) => {
       console.log("Response from internal API call:");
     })
