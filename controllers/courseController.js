@@ -44,12 +44,12 @@ export const updateCourse = async (req, res) => {
       {
         replacements: {
           mode: "update",
-          courseid: courseid,
-          coursename: coursename,
-          description: description,
-          startdate: startdate,
-          enddate: enddate,
-          teacher: teacher,
+          courseid: courseid || null,
+          coursename: coursename || null,
+          description: description || null,
+          startdate: startdate || null,
+          enddate: enddate || null,
+          teacher: teacher || null,
         },
       }
     );
@@ -68,12 +68,12 @@ export const deleteCourse = async (req, res) => {
       {
         replacements: {
           mode: "delete",
-          courseid: courseid,
-          coursename: coursename,
-          description: description,
-          startdate: startdate,
-          enddate: enddate,
-          teacher: teacher,
+          courseid: courseid || null,
+          coursename: coursename || null,
+          description: description || null,
+          startdate: startdate || null,
+          enddate: enddate || null,
+          teacher: teacher || null,
         },
       }
     );
