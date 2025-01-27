@@ -50,3 +50,21 @@ export const updateTimeTable = async (req, res) => {
     return res.status(500).json({ message: err.message });
   }
 };
+
+export const deleteTimeTable = async (req, res) => {
+  const { id } = req?.body;
+
+  try {
+    const [result] = await sequelize.query(
+      `select * from public.delete_timetable(:id);`,
+      {
+        replacements: {
+          id: id,
+        },
+      }
+    );
+    return res.json({ data: result });
+  } catch (err) {
+    return res.status(500).json({ message: err.message });
+  }
+};
