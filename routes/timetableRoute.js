@@ -8,7 +8,7 @@ import {
 const router = express.Router();
 
 router.get("/timetables", getTimeTables);
-router.put("/:id/updatetable", updateTimeTable);
+router.post("/:id/updatetable", updateTimeTable);
 router.post("/addtable", addTimeTable);
 
 export default router;
