@@ -7,6 +7,7 @@ import timetableRoute from "./routes/timetableRoute.js";
 import courseRoute from "./routes/courseRoute.js";
 import axios from "axios";
 import cron from "node-cron";
+import { addToken } from "./service/Notification.js";
 
 const app = express();
 const PORT = "8000";
@@ -33,6 +34,7 @@ app.use(express.json());
 app.use("/api/product", productRoute);
 app.use("/api", timetableRoute);
 app.use("/api", courseRoute);
+app.post("/api/addtoken", addToken);
 
 cron.schedule("* * * * * *", () => {
   console.log("Cron job running every 1 minutes");

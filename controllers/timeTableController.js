@@ -1,4 +1,5 @@
 import sequelize from "../db.js";
+import { sendNotification } from "../service/Notification.js";
 
 export const getTimeTables = async (req, res) => {
   try {
@@ -45,6 +46,7 @@ export const updateTimeTable = async (req, res) => {
         },
       }
     );
+    await sendNotification(`Time Table ${name} is updated`);
     return res.json({ data: result });
   } catch (err) {
     return res.status(500).json({ message: err.message });
