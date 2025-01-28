@@ -11,6 +11,6 @@ const router = express.Router();
 router.get("/timetables", getTimeTables);
 router.post("/:id/updatetable", updateTimeTable);
 router.post("/addtable", addTimeTable);
-router.delete("/deletetable", deleteTimeTable);
+router.post("/deletetable", deleteTimeTable);
 
 export default router;
